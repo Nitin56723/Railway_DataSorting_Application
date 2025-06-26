@@ -1,0 +1,48 @@
+{
+    "fg": [
+        "Erode",
+        "Jolarpettai"
+    ],
+    "dt": {
+        "ED": [
+            "TPMR",
+            "VNJ",
+            "CBF",
+            "CBE",
+            "ED",
+            "PYR",
+            "VZ",
+            "IGU",
+            "PLMD",
+            "UKL",
+            "SNO",
+            "IGR",
+            "TUP",
+            "SUU"
+        ],
+        "JTJ": [
+            "DST",
+            "JTJ",
+            "MAP",
+            "CV",
+            "BDY",
+            "ED",
+            "MVPM",
+            "BQL",
+            "LCR",
+            "SGE",
+            "KEY",
+            "MGSJ",
+            "VRPD",
+            "TNT",
+            "ANU",
+            "DC",
+            "DSPT",
+            "DPI",
+            "SLY",
+            "KPPR",
+            "SA",
+            "TPT"
+        ]
+    }
+}
