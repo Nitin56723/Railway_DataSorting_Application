@@ -1,116 +1,72 @@
-Crew Duty Filter
-A Python GUI application built using Tkinter for filtering Indian Railways crew duty Excel data based on specific station zones. The app reads Excel files, filters crew duty information by sign-on/sign-off stations, and generates new structured Excel files with additional summaries and counts.
+# 🚆 Crew Duty Filter – Excel Automation for Railway Data
 
-🧩 Features:-
+This project is a **Tkinter-based desktop application** for filtering crew duty Excel sheets based on zone-specific station mappings. It helps automate the generation of structured reports (From/To) for Indian Railways or similar use cases.
+
+---
+
+## 📌 Project Objectives
+
+- Filter large Excel datasets based on zone-wise crew movements.
+- Generate two separate Excel files (`FromZone.xlsx` and `ToZone.xlsx`) for each region.
+- Count and summarize `SP` and `WR` duty types.
+- Allow easy addition and editing of zones and station mappings through a GUI.
+
+---
+
+## 📁 Input Data Requirements
+
+- **Input Format**: Excel (.xlsx or .xls)
+- **Header Row**: Should contain `S.No.` or `S.No`
+- **Required Columns**:
+  - `S.No.`
+  - `CREW ID`
+  - `SIGNON STTN`
+  - `SIGNOFF STTN`
+  - `DUTY TYPE` (values like `SP` and `WR`)
+
+---
+
+## 🔧 Tools & Technologies
+
+- **Python**
+- **Tkinter** for the GUI
+- **Pandas** for data processing
+- **OpenPyXL** for Excel file manipulation
+- **JSON** for saving station mappings
+- **itertools.product** for pair-wise station analysis
+
+---
+
+## 🧠 Core Features
+
+- 📂 Select and load Excel file from GUI  
+- 🧪 Automatically detect header row  
+- 📤 Generate `FromZone` and `ToZone` Excel files for each region  
+- 📊 Append duty counts and SP duty summaries to each sheet  
+- 📝 Add/Edit/Delete zones and mapped stations via interface  
+- 💾 Station mappings persist in `stations.json`  
+
+---
+
+## 📊 Example Output
+
+Each output file (`FromErode.xlsx`, `ToJolarpettai.xlsx`, etc.) contains:
+
+- Filtered crew records relevant to the selected zone
+- Summary rows:
+  - `SP COUNT`
+  - `WR COUNT`
+- Table of SP duties:
 
 
-  📁 Load crew data from Excel files.
+---
 
-  🔍 Filter based on predefined station zones.
+## ▶️ How to Run
 
-  📝 Edit or add new zones dynamically (GUI-based).
+1. **Clone the repository**:
 
-  📊 Auto-generates filtered Excel reports:
-
-  From-Zone and To-Zone files.
-
-  SP/WR duty counts and summaries.
-
-  💾 Persist zone data in a stations.json file.
-
-  📐 Automatically adjusts Excel column widths.
-
-📸 GUI Preview:-
-
-  Main Window: File selection and action buttons.
-
-  Add Station: Add new zone name, zone code, and mapped stations.
-
-  View/Edit Station: Modify or review existing zone mappings.
-
-🛠️ Installation:-
-
-
-Requirements
-Python 3.7+
-
-Required libraries:
-
-pip install pandas openpyxl
-Optional (For .exe build via PyInstaller)
-
-pip install pyinstaller
-
-
-🚀 How to Run
-Clone the repository:
-
+```bash
 git clone https://github.com/yourusername/crew-duty-filter.git
 cd crew-duty-filter
 
 
-Run the application:
-
-
-python crew_duty_filter.py
-
-📂 Input Excel Format
-
-
-The Excel file must contain a row with "S.No." or "S.No" in any column to identify headers.
-
-Columns used:
-
-S.No.
-
-CREW ID
-
-SIGNON STTN
-
-SIGNOFF STTN
-
-DUTY TYPE (Should contain values like "SP" and "WR")
-
-📤 Output
-For each zone, two files are generated:
-
-From<ZoneName>.xlsx
-
-To<ZoneName>.xlsx
-
-Each file contains:
-
-Filtered rows based on relevant station mappings.
-
-Counts of SP and WR duty types.
-
-A table summary of SP duties at the bottom.
-
-📘 Zone Definitions (stations.json)
-Stores:
-
-{
-  "fg": ["Erode", "Jolarpettai"],
-  "dt": {
-    "ED": ["ED", "TPMR", "PYR", "..."],
-    "JTJ": ["JTJ", "TPT", "KEY", "..."]
-  }
-}
-Can be updated via "Add Station" or "View Station" GUI buttons.
-
-💡 Use Cases
-Railway crew duty filtering and reporting
-
-Automating Excel report generation
-
-Educational GUI projects in Python
-
-📦 Packaging (Optional)
-To convert into a .exe for Windows:
-
-
-pyinstaller --onefile --add-data "stations.json;." crew_duty_filter.py
-
-
-📄 License
-This project is licensed under the MIT License.
